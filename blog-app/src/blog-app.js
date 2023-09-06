@@ -4,7 +4,7 @@ const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
 class BlogApp extends LitElement {
   static properties = {
-    header: { type: String },
+    cabecera: { type: String },
   }
 
   static styles = css`
@@ -52,14 +52,20 @@ class BlogApp extends LitElement {
 
   constructor() {
     super();
-    this.header = 'My app';
+    /*Valor Default*/
+    this.cabecera = 'Mi aplicacion';
+  }
+
+  cambiarTitulo(){
+    this.cabecera = 'Titulo cambiado';
   }
 
   render() {
     return html`
       <main>
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.header}</h1>
+        <h1>${this.cabecera}</h1>
+        
 
         <p>Edit <code>src/BlogApp.js</code> and save to reload.</p>
         <a
@@ -70,6 +76,9 @@ class BlogApp extends LitElement {
         >
           Code examples
         </a>
+        <br>
+        <button @click='${this.cambiarTitulo}'>Cambiar titulo</button>
+      
       </main>
 
       <p class="app-footer">
