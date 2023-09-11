@@ -4,7 +4,7 @@ const logo = new URL("../assets/open-wc-logo.svg", import.meta.url).href;
 
 export class BlogApp extends LitElement {
   static properties = {
-    cabecera: { type: String },
+    cabecera: { type: String }
   };
 
   static styles = css`
@@ -54,6 +54,11 @@ export class BlogApp extends LitElement {
     super();
     /*Valor Default*/
     this.cabecera = "Mi aplicacion";
+    this.posts = [
+      { title: "Test 1", author: "Franco Frizzo", date: new Date()},
+      { title: "Test 2", author: "Franco Frizzo", date: new Date()},
+      { title: "Test 3", author: "Franco Frizzo", date: new Date()},
+    ]
   }
 
   cambiarTitulo() {
@@ -61,9 +66,11 @@ export class BlogApp extends LitElement {
   }
 
   render() {
+    const postList = this.posts.map(post => html `<blog-post title=${post.title}></blog-post>`);
     return html`
       <main>
         <h1>${this.cabecera}</h1>
+        ${postList}
       </main>
       `;
     }
@@ -71,7 +78,7 @@ export class BlogApp extends LitElement {
 
 export default BlogApp;
 
-  //Cambio Render.
+//Cambio Render.
   /*
   render() {
     return html`
@@ -103,4 +110,3 @@ export default BlogApp;
       </p>
     `;
   }*/
-

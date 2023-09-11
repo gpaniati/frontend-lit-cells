@@ -1,19 +1,24 @@
-import { LitElement } from "lit";
+import { LitElement, html, css } from "lit";
 
-const datos = {
-  title: "Creando nuestros componentes con LitElement",
-  author: "Franco Frizzo",
-  date: new Date(),
-  content: "Contenido del post…",
-  categories: ["Desarrollo web", "LitElement"],
-  highlighted: true,
-};
+export class BlogPost extends LitElement {
+  static properties = {
+    title: { type: String },
+    author: { type: String },
+    dia: { type: String }
+  };
 
-class BlogPost extends LitElement {
-    render() {
-        return html `
-        <h2>Forro</h2>`
-    }
+  constructor() {
+    super();
+    this.title = "Gaston";
+  }
+
+  render() {
+    return html`
+    <main>
+    ${this.title}
+    ${this.author}
+    ${this.dia}
+    </main>`;
+  }
+
 }
-
-export default BlogPost;
