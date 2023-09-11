@@ -4,7 +4,7 @@ export class BlogPost extends LitElement {
   static properties = {
     title: { type: String },
     author: { type: String },
-    dia: { type: String }
+    dia: { type: String },
   };
 
   constructor() {
@@ -13,12 +13,6 @@ export class BlogPost extends LitElement {
   }
 
   render() {
-    return html`
-    <main>
-    ${this.title}
-    ${this.author}
-    ${this.dia}
-    </main>`;
+    return html` <main>${this.title} ${this.author} ${this.dia}</main>`;
   }
-
 }

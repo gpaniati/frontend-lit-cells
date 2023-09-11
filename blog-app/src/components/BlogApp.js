@@ -3,6 +3,7 @@ import { LitElement, html, css } from "lit";
 const logo = new URL("../assets/open-wc-logo.svg", import.meta.url).href;
 
 export class BlogApp extends LitElement {
+  //Propiedades publicas.
   static properties = {
     cabecera: { type: String }
   };
@@ -53,6 +54,7 @@ export class BlogApp extends LitElement {
   constructor() {
     super();
     /*Valor Default*/
+    //Propiedades Privadas
     this.cabecera = "Mi aplicacion";
     this.posts = [
       { title: "Test 1", author: "Franco Frizzo", date: new Date()},
